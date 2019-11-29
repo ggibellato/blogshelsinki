@@ -4,9 +4,10 @@
   "description": "List of useful blogs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node .",
-    "watch": "nodemon index.js"
+    "start": "cross-env NODE_ENV=production node .",
+    "watch": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose",
+    "lint": "eslint ."
   },
   "author": "GGS",
   "license": "MIT",
@@ -15,10 +16,14 @@
     "dotenv": "^8.2.0",
     "env": "0.0.2",
     "express": "^4.17.1",
+    "lodash": "^4.17.15",
     "mongoose": "^5.7.12"
   },
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "eslint": "^6.7.1",
-    "nodemon": "^2.0.1"
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.1",
+    "supertest": "^4.0.2"
   }
 }
